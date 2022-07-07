@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, matchPath } from 'react-router-dom';
 import './App.css';
 
 import Ciudad from '../components/Ciudad/Ciudad.jsx'
@@ -9,6 +9,7 @@ import Cards from '../components/Cards/Cards.jsx';
 
 export default function App() {
   const[cities, setCities] = useState([]);
+  const match = matchPath()
   
   
   function onSearch(ciudad){
@@ -34,9 +35,7 @@ export default function App() {
           longitud: recurso.coord.lon
         };
         setCities(oldCities => [...oldCities, ciudad]);
-      } else {
-        alert("Ciudad no encontrada");
-      }
+      } 
     });
   }
 
@@ -56,15 +55,15 @@ export default function App() {
       
           <Nav onSearch={onSearch}/>
    
-          <Switch>
+          <Routes>
             
-            <Route exact path='/ciudades' render={() => <Cards cities={cities} onClose={onClose}/>}/>
+            <Route exact path='/ciudades' element={<Cards cities={cities} onClose={onClose}/>}/>
             
-            <Route exact path='/ciudad/:ciudadId' render={({match})=> <Ciudad city={onFilter(match.params.ciudadId)}/>}/>
+            <Route exact path='/ciudad/:ciudadId' element={<Ciudad city={onFilter(match.params.ciudadId)}/>}/>
       
-            <Route exact path='/about' render={() => <About/>}/>
+            <Route exact path='/about' element={<About/>}/>
           
-          </Switch>
+          </Routes>
           
       </BrowserRouter>
       

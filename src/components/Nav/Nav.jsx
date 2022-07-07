@@ -5,10 +5,10 @@ import SearchBar from '../SearchBar/SearchBar.jsx';
 
 import './Nav.css';
 
-function Nav({onSearch}) {
+export default function Nav({onSearch}) {
   return (
     <nav className='searchBar'>
-      <Link to='/'>
+      <Link to='/ciudades'>
         <img src={Logo} id='logoHenry' alt='Img'></img>
       </Link>
       <Link to='/About'>
@@ -19,4 +19,4 @@ function Nav({onSearch}) {
   );
 };
 
-export default Nav;
+

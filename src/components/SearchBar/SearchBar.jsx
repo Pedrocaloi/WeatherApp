@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './SearchBar.css';
 
 export default function SearchBar({onSearch}) {
  const [city, setCity] = useState("");
- const history = useHistory();
+ const navigate = useNavigate();
  
   const handleChange = (e) => {
     e.preventDefault();
@@ -16,8 +16,9 @@ export default function SearchBar({onSearch}) {
     <form onSubmit={(e) => {
       e.preventDefault();
       onSearch(city);
-      history.push("/ciudades")
+      navigate("/ciudades");
       e.target[0].value = "";
+      setCity();
     }}>
       <input 
         className="input"
