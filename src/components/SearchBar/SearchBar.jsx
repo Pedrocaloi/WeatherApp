@@ -16,7 +16,7 @@ export default function SearchBar({onSearch}) {
     <form onSubmit={(e) => {
       e.preventDefault();
       onSearch(city);
-      navigate("/WheatherApp");
+      navigate("/WeatherApp");
       e.target[0].value = "";
       setCity();
     }}>

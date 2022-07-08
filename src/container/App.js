@@ -53,11 +53,11 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
       
-          <Nav path='/WheatherApp'onSearch={onSearch}/>
+          <Nav path='/WeatherApp'onSearch={onSearch}/>
    
           <Routes>
             
-            <Route exact path='/WheatherApp' element={<Cards cities={cities} onClose={onClose}/>}/>
+            <Route exact path='/WeatherApp' element={<Cards cities={cities} onClose={onClose}/>}/>
             
             <Route exact path='/ciudad/:ciudadId' element={<Ciudad onFilter={onFilter}/>}/>
       

@@ -8,7 +8,7 @@ import './Nav.css';
 export default function Nav({onSearch}) {
   return (
     <nav className='searchBar'>
-      <Link to='/WheatherApp'>
+      <Link to='/WeatherApp'>
         <img src={Logo} id='logoHenry' alt='Img'></img>
       </Link>
       <Link to='/About'>

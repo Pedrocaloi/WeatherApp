@@ -9,7 +9,7 @@ export default function Ciudad({onFilter}){
     return(
         <div className="ciudad">
             <div className='container'>
-                <Link to="/WheatherApp">
+                <Link to="/WeatherApp">
                     <h2 className="ciudadNombre">{city.name}</h2>
                 </Link>
                 <div className="info">
