@@ -8,13 +8,14 @@ import './Nav.css';
 export default function Nav({onSearch}) {
   return (
     <nav className='searchBar'>
-      <Link to='/ciudades'>
+      <Link to='/WheatherApp'>
         <img src={Logo} id='logoHenry' alt='Img'></img>
       </Link>
       <Link to='/About'>
         <span className='About'>About</span>
       </Link>
       <SearchBar onSearch={onSearch} />
+      <hr/>
     </nav>
   );
 };

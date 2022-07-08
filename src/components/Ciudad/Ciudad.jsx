@@ -1,12 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import "./Ciudad.css"
 
-export default function Ciudad({city}){
+export default function Ciudad({onFilter}){
+    const params = useParams();
+    const city = onFilter(params.ciudadId);
+    
     return(
         <div className="ciudad">
             <div className='container'>
-                <Link to="/ciudades">
+                <Link to="/WheatherApp">
                     <h2 className="ciudadNombre">{city.name}</h2>
                 </Link>
                 <div className="info">

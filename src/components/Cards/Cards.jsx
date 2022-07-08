@@ -1,11 +1,10 @@
 import React from 'react';
-import '../Cards/Cards.css';
-
+import './Cards.css';
 
 import Card from '../Card/Card.jsx';
 
 export default function Cards({cities, onClose}) {
-  if(cities){
+  if(cities.length > 0){
     return (
       <div className='cards'>
         {cities.map(c => <Card
@@ -21,7 +20,10 @@ export default function Cards({cities, onClose}) {
     );
   } else {
     return(
-      <div>Sin ciudades</div>
+      <div>
+        <h2 className='error'>Sin ciudades</h2>
+        <h6>Ingrese una ciudad en el buscador</h6>
+      </div>
     )
   }
 }
